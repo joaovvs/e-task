@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.aside`
   grid-area: menu;
@@ -8,20 +9,25 @@ export const Container = styled.aside`
 
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
+    grid-area: none;
+    display: none;
+  }
 `;
 
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 32px 24px;
+  padding: 3.2rem 2.4rem;
 `;
 
 export const Title = styled.h1`
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 0.7rem;
   color: ${({ theme }) => theme.COLORS.BLUE_200};
-  font-size: 24px;
+  font-size: 2.4rem;
 `;
 
 export const Nav = styled.nav`
@@ -33,10 +39,10 @@ export const Nav = styled.nav`
     color: ${({ theme }) => theme.COLORS.GRAY_100};
     display: flex;
     align-items: center;
-    gap: 7px;
-    padding-left: 24px;
-    height: 56px;
-    font-size: 16px;
+    gap: 0.7rem;
+    padding-left: 2.4rem;
+    height: 5.6rem;
+    font-size: 1.6rem;
 
     &[data-menu-active="true"] {
       background-color: ${({ theme }) => theme.COLORS.BLUE_200};
@@ -46,15 +52,15 @@ export const Nav = styled.nav`
 `;
 
 export const Footer = styled.footer`
-  padding: 24px;
+  padding: 2.4rem;
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 0.7rem;
 
   > img {
-    width: 40px;
-    height: 40px;
-    border-radius: 22px;
+    width: 4.0rem;
+    height: 4.0rem;
+    border-radius: 2.2rem;
   }
 
   > div {
@@ -64,10 +70,10 @@ export const Footer = styled.footer`
   }
 
   > div strong {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
   > div small {
-    font-size: 12px;
+    font-size: 1.2rem;
   }
 `;
 
@@ -76,7 +82,7 @@ export const Button = styled.button`
     border: none;
 
   > svg {
-    font-size: 20px;
+    font-size: 2rem;
     color: ${({ theme }) => theme.COLORS.GRAY_300};
   }
 `;
